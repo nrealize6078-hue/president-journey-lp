@@ -63,22 +63,50 @@ br.sp{display:none}
 .depart h2 .big{display:block;font-weight:700;font-size:1.45em}
 .depart .next{color:var(--gold-l);font-size:16px;margin-top:16px}
 
-.ticket{margin-top:40px;background:var(--paper);color:var(--navy);border-radius:6px;padding:30px 34px;display:grid;grid-template-columns:1fr 200px;gap:0 32px}
-.ticket .head{grid-column:1/-1;padding-bottom:18px;border-bottom:1px solid var(--line)}
-.ticket .head p:first-child{font-family:"Cinzel",serif;font-weight:600;font-size:22px;letter-spacing:.06em}
-.route{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:18px 0 22px;border-bottom:1px dashed #c9bda6}
-.route dt{font-size:13px;color:var(--sub)}
-.route dd{font-size:20px;font-weight:500}
-.go{padding-top:24px}
-.go h3{font-size:22px;font-weight:500}
-.go p{font-size:15px;color:var(--sub);margin-top:8px;line-height:1.9}
-.go .pace{color:var(--gold);margin-top:14px}
-.btn{display:flex;align-items:center;justify-content:center;min-height:58px;margin-top:20px;padding:10px 16px;border-radius:6px;background:var(--navy);color:var(--paper);font-size:18px;font-weight:700;text-decoration:none;letter-spacing:.04em;text-align:center}
+/* チケット：画像の罫線の間に文字を置く。基準はスマホ（縦長）版 */
+.ticket{position:relative;container-type:inline-size;width:min(100%,440px);margin:40px auto 0;aspect-ratio:767/1291;
+  background:url(assets/ticket-sp.webp) center/100% 100% no-repeat;color:var(--navy);text-align:center}
+.ticket .z{position:absolute;left:9%;right:9%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.t-head{top:10.5%;height:12%}
+.t-title{font-family:"Cinzel",serif;font-weight:600;font-size:4.6cqw;letter-spacing:.06em;line-height:1.3}
+.ticket .en{font-size:max(9px,2.5cqw);letter-spacing:.24em;margin-top:.6cqw}
+.t-route{top:24.2%;height:12.3%;display:grid!important;grid-template-columns:1fr 1fr;align-content:center;gap:0 4cqw}
+.t-route dt{font-size:max(11px,3.2cqw);color:var(--sub);line-height:1.6}
+.t-route dd{font-size:5cqw;font-weight:500;line-height:1.5}
+.t-go{top:36.3%;height:11%}
+.t-go h3{font-size:5.4cqw;font-weight:500;line-height:1.5}
+.t-go p{font-size:max(12px,3.4cqw);color:var(--sub);line-height:1.6;margin-top:1cqw}
+.t-cta{top:50%;height:18%}
+.btn{display:flex;align-items:center;justify-content:center;width:84%;min-height:12.5cqw;border-radius:1.6cqw;background:var(--navy);color:var(--paper);
+  font-size:max(14px,4.4cqw);font-weight:700;text-decoration:none;letter-spacing:.04em;text-align:center;box-shadow:0 2px 0 rgba(22,55,71,.25)}
 .btn:hover{background:#1f4a5e}
-.qr{padding-top:24px;text-align:center}
-.qr img{width:170px;margin:0 auto;border:1px solid var(--line);border-radius:4px;padding:6px;background:#fff}
-.qr p{font-size:13px;color:var(--gold);margin-top:8px}
-.qr .note{color:var(--sub);font-size:12px;margin-top:2px}
+.t-cta .pace{font-size:max(12px,3.4cqw);color:var(--gold);margin-top:3cqw;line-height:1.5}
+.t-qr{top:70%;height:23.5%}
+.t-qr img{width:27cqw;background:#fff;padding:1.2cqw;border-radius:1cqw;border:1px solid var(--line)}
+.t-qr p{font-size:max(12px,3.2cqw);color:var(--gold);margin-top:1.6cqw;line-height:1.4}
+.t-qr .note{display:none}
+
+@media (min-width:901px){
+  .depart .in{max-width:1000px}
+  .ticket{width:100%;aspect-ratio:1374/619;background-image:url(assets/ticket-pc.webp)}
+  .ticket .t-head,.ticket .t-route,.ticket .t-go,.ticket .t-cta{left:13%;right:auto;width:55%}
+  .t-head{top:3%;height:18.6%}
+  .t-title{font-size:2.3cqw}
+  .ticket .en{font-size:max(10px,1.05cqw);margin-top:.3cqw}
+  .t-route{top:22.5%;height:22%;gap:0 3cqw}
+  .t-route dt{font-size:max(12px,1.15cqw)}
+  .t-route dd{font-size:2.1cqw}
+  .t-go{top:46.5%;height:15.5%}
+  .t-go h3{font-size:2.1cqw}
+  .t-go p{font-size:max(13px,1.35cqw);margin-top:.3cqw}
+  .t-cta{top:62%;height:25%}
+  .btn{width:62%;min-height:5.2cqw;border-radius:.6cqw;font-size:1.75cqw}
+  .t-cta .pace{font-size:max(13px,1.3cqw);margin-top:1.1cqw}
+  .ticket .t-qr{left:77%;right:auto;width:20.5%;top:33%;height:50%}
+  .t-qr img{width:12.5cqw;padding:.5cqw;border-radius:.4cqw}
+  .t-qr p{font-size:max(12px,1.2cqw);margin-top:.6cqw}
+  .t-qr .note{display:block;color:var(--sub);font-size:max(10px,.85cqw);margin-top:.1cqw}
+}
 
 .foot{text-align:center;margin-top:44px;color:var(--gold-l)}
 .foot .online{font-size:15px}
@@ -121,15 +149,7 @@ br.sp{display:none}
   .story .guide p{font-size:min(15px,4.2vw)}
   .depart{padding:56px 16px 44px}
   .depart .to,.depart .next{font-size:min(15px,4.2vw)}
-  .ticket{grid-template-columns:1fr;padding:24px 18px;margin-top:30px}
-  .ticket .head p:first-child{font-size:min(20px,5.4vw)}
-  .route dd{font-size:min(18px,4.9vw)}
-  .go{text-align:center}
-  .go h3{font-size:min(21px,5.8vw)}
-  .go p{font-size:min(15px,4.2vw)}
-  .btn{font-size:min(17px,4.8vw)}
-  .qr{border-top:1px dashed #c9bda6;margin-top:24px}
-  .qr img{width:140px}
+  .ticket{margin:30px -8px 0;width:calc(100% + 16px)}
   .foot .online{font-size:min(14px,3.9vw)}
   .bar{padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
   .bar .in{gap:10px}
@@ -187,21 +207,23 @@ br.sp{display:none}
       <p class="next"><w-b>次の一歩は、</w-b><w-b>あなたの想いから。</w-b></p>
 
       <div class="ticket">
-        <div class="head">
-          <p>PRESIDENT JOURNEY</p>
+        <div class="z t-head">
+          <p class="t-title">PRESIDENT JOURNEY</p>
           <p class="en">SPECIAL INVITATION</p>
         </div>
-        <dl class="route">
+        <dl class="z t-route">
           <div><dt>出発地</dt><dd>あなたの原点</dd></div>
           <div><dt>行き先</dt><dd>人生支援経営</dd></div>
         </dl>
-        <div class="go">
+        <div class="z t-go">
           <h3><w-b>この旅へ、</w-b><w-b>出発する。</w-b></h3>
-          <p><w-b>LINEを開いて、</w-b><br class="sp"><w-b>PRESIDENT JOURNEYへ。</w-b></p>
+          <p><w-b>LINEを開いて、</w-b><w-b>PRESIDENT JOURNEYへ。</w-b></p>
+        </div>
+        <div class="z t-cta">
           <a class="btn" href="https://lin.ee/vk9duU5" target="_blank" rel="noopener"><span><w-b>LINEで</w-b><w-b>旅をはじめる</w-b></span></a>
           <p class="pace"><w-b>あなたのペースで、</w-b><w-b>ここから。</w-b></p>
         </div>
-        <div class="qr">
+        <div class="z t-qr">
           <img src="assets/line-qr.png" width="540" height="540" alt="PRESIDENT JOURNEY LINE公式アカウントのQRコード">
           <p>旅のチケット</p>
           <p class="note"><w-b>スマホのカメラで</w-b><w-b>読み取れます</w-b></p>
