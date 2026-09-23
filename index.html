@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>PRESIDENT JOURNEY｜旅への招待状</title>
-<meta name="description" content="あなたの原点から、まだ見ぬ会社の未来へ。AIミオ先生との対話を通して、自分の原点と、社員・会社の未来を見つめる7日間。経営者限定・参加無料。">
+<meta name="description" content="あなたの原点から、まだ見ぬ会社の未来へ。LINEで、ミオ先生との対話をしながら、自分の原点や、社員・会社のこれからを振り返る7日間。経営者限定・参加無料。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@ a{color:inherit}
 /* 文節：どの幅でも文節の境目でしか折り返さない */
 w-b{display:inline-block}
 br.sp{display:none}
-@media (max-width:600px){br.sp{display:inline}}
+@media (max-width:600px){br.sp{display:inline}br.pc{display:none}}
 .en{font-family:"Cinzel",serif;font-weight:600;letter-spacing:.28em;font-size:12px;color:var(--gold)}
 
 /* 表紙 */
@@ -188,7 +188,7 @@ br.sp{display:none}
   .story .guide h3{font-size:min(18px,4.9vw)}
   .story .guide p{font-size:min(15px,4.2vw)}
   .depart{padding:56px 16px 44px}
-  .depart .to,.depart .next{font-size:min(15px,4.2vw)}
+  .depart .to,.depart .next{font-size:max(14px,min(15px,4.2vw))}
   .ticket{margin:30px -8px 0;width:calc(100% + 16px)}
   .foot .online{font-size:min(14px,3.9vw)}
   .bar{padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
@@ -198,6 +198,24 @@ br.sp{display:none}
   .bar a{min-height:50px;padding:0 16px;font-size:min(16px,4.4vw)}
 }
 
+@media (max-width:600px) and (max-height:620px){
+  .cover .txt{padding-top:12px;min-height:0}
+  .cover h1{margin-top:6px;font-size:min(44px,9.4vw)}
+  .cover .kana{margin-top:4px}
+  .cover .catch{margin-top:12px;font-size:min(30px,6.4vw)}
+  .cover .fv-desc{margin-top:6px;line-height:1.55}
+  .fv-tags{margin-top:8px}
+  .cover .cta{margin-top:10px;min-height:50px}
+}
+@media (min-width:901px) and (max-height:760px){
+  .cover .txt{padding-top:20px;padding-bottom:16px}
+  .cover h1{font-size:40px;margin-top:10px}
+  .cover .kana{margin-top:4px}
+  .cover .catch{font-size:28px;margin-top:16px}
+  .cover .fv-desc{margin-top:8px;line-height:1.7}
+  .fv-tags{margin-top:12px}
+  .cover .cta{margin-top:14px;min-height:52px}
+}
 /* アニメーション：控えめに。JSが動いたときだけ隠す（動かなければ最初から全部見える） */
 @keyframes fvIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 @keyframes fvZoom{from{transform:scale(1.06)}to{transform:scale(1)}}
@@ -231,7 +249,7 @@ br.sp{display:none}
     <h1>PRESIDENT<br>JOURNEY</h1>
     <p class="kana">旅への招待状</p>
     <p class="catch"><w-b>あなたの</w-b><w-b>原点から、</w-b><br><w-b>まだ見ぬ</w-b><w-b>会社の未来へ。</w-b></p>
-    <p class="fv-desc"><w-b>AIミオ先生との</w-b><w-b>対話を通して、</w-b><br><w-b>自分の原点と、</w-b><br class="sp"><w-b>社員・会社の未来を</w-b><w-b>見つめる7日間。</w-b></p>
+    <p class="fv-desc"><w-b>LINEで、</w-b><w-b>ミオ先生との</w-b><w-b>対話をしながら、</w-b><br><w-b>自分の原点や、</w-b><br class="sp"><w-b>社員・会社のこれからを</w-b><w-b>振り返る7日間。</w-b></p>
     <p class="fv-tags"><span>経営者限定</span><span>参加無料</span><span>7日間</span></p>
     <a class="cta fv-cta" href="https://lin.ee/vk9duU5" target="_blank" rel="noopener"><span><w-b>LINEで</w-b><w-b>無料ではじめる</w-b></span></a>
   </div>
@@ -253,7 +271,7 @@ br.sp{display:none}
   <section class="about">
     <p class="en">ABOUT THE JOURNEY</p>
     <h2><w-b>PRESIDENT JOURNEY</w-b><br class="sp"><w-b>とは？</w-b></h2>
-    <p class="lead"><w-b>7日間、</w-b><w-b>毎日少しずつ。</w-b><br><w-b>ミオ先生から届く</w-b><br class="sp"><w-b>問いに答えながら、</w-b><br><w-b>自分の原点や、</w-b><br class="sp"><w-b>社員・会社の</w-b><w-b>これからを</w-b><br class="sp"><w-b>振り返っていきます。</w-b></p>
+    <p class="lead"><w-b>7日間、</w-b><w-b>毎日少しずつ。</w-b><br><w-b>LINEで</w-b><w-b>ミオ先生から届く</w-b><br class="sp"><w-b>問いに答えながら、</w-b><br><w-b>自分の原点や、</w-b><br class="sp"><w-b>社員・会社の</w-b><w-b>これからを</w-b><br class="sp"><w-b>振り返っていきます。</w-b></p>
     <p class="lead"><w-b>答えを</w-b><w-b>教えてもらうのではなく、</w-b><br><w-b>対話を通して、</w-b><br class="sp"><w-b>自分の中にある</w-b><w-b>想いに</w-b><w-b>気づいていく。</w-b><br><w-b>それが、</w-b><w-b>PRESIDENT JOURNEYです。</w-b></p>
     <p class="fv-tags"><span>経営者限定</span><span>参加無料</span><span>7日間</span></p>
     <a class="cta" href="https://lin.ee/vk9duU5" target="_blank" rel="noopener"><span><w-b>LINEで</w-b><w-b>無料ではじめる</w-b></span></a>
@@ -263,7 +281,7 @@ br.sp{display:none}
     <p class="en">7 DAYS WITH MIO</p>
     <h2><w-b>ミオ先生との</w-b><br class="sp"><w-b>対話で振り返る、</w-b><br><w-b>7日間の旅。</w-b></h2>
     <ol>
-      <li><b>01</b><p><w-b>ミオ先生から</w-b><w-b>問いが届く</w-b></p></li>
+      <li><b>01</b><p><w-b>LINEに</w-b><w-b>ミオ先生から</w-b><w-b>問いが届く</w-b></p></li>
       <li><b>02</b><p><w-b>自分の言葉で</w-b><w-b>答える</w-b></p></li>
       <li><b>03</b><p><w-b>対話を</w-b><w-b>重ねる</w-b></p></li>
       <li><b>04</b><p><w-b>少しずつ、</w-b><w-b>自分と会社の未来が</w-b><w-b>見えてくる</w-b></p></li>
@@ -274,8 +292,8 @@ br.sp{display:none}
     <div class="ph"><img src="assets/scenery.jpg" width="971" height="742" alt="川の流れる谷の先に見える、朝の街並み"></div>
     <div class="txt">
       <p class="en">YOUR NEXT SCENERY</p>
-      <h2><w-b>社員を</w-b><w-b>大事にしてきた</w-b><w-b>想いを、</w-b><br><w-b>未来へ。</w-b></h2>
-      <p class="body"><w-b>社員一人ひとりと、</w-b><w-b>その家族の</w-b><w-b>これから。</w-b><br><w-b>会社として、</w-b><br class="sp"><w-b>どんな支えを</w-b><w-b>届けたいだろう。</w-b></p>
+      <h2><w-b>社員を</w-b><w-b>大事にしてきた</w-b><br class="sp"><w-b>想いを、</w-b><br class="pc"><w-b>未来へ。</w-b></h2>
+      <p class="body"><w-b>社員一人ひとりと、</w-b><br class="sp"><w-b>その家族の</w-b><w-b>これから。</w-b><br><w-b>会社として、</w-b><br class="sp"><w-b>どんな支えを</w-b><w-b>届けたいだろう。</w-b></p>
       <p class="ask"><w-b>旅の中で</w-b><w-b>見えてきた想いを、</w-b><br><w-b>社員の人生を支える</w-b><w-b>「仕組み」へ。</w-b></p>
     </div>
   </section>
@@ -343,7 +361,7 @@ br.sp{display:none}
   els.forEach(function(e){e.classList.add('rv')});
   // 7日間の4ステップは順番に
   [].slice.call(document.querySelectorAll('.flow li')).forEach(function(li,i){li.style.setProperty('--d',(i*0.15)+'s')});
-  // 物語ページは写真→文章の順に
+  // 物語ページは写真のあとに文章
   [].slice.call(document.querySelectorAll('.story .txt')).forEach(function(t){t.style.setProperty('--d','.15s')});
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
