@@ -48,6 +48,7 @@ br.sp{display:none}
 .story .body{margin-top:22px;font-size:16px;color:var(--sub);line-height:2}
 .story .ask{margin-top:28px;font-size:19px;font-weight:500;line-height:2}
 .story .guide{margin-top:30px;padding-top:24px;border-top:1px solid var(--line)}
+.story .guide .mio{width:100%;border-radius:4px;margin-bottom:20px}
 .story .guide h3{font-size:18px;font-weight:700}
 .story .guide p{margin-top:8px;font-size:15px;color:var(--sub);line-height:2}
 .story .guide p+p{margin-top:14px}
@@ -94,10 +95,10 @@ br.sp{display:none}
 .bar a:hover{background:#ead3a5}
 
 @media (max-width:900px){
-  .cover{display:block;min-height:0}
-  .cover .txt{padding:30px 20px 26px}
-  .cover .ph{max-height:120vw}
-  .cover .ph img{height:auto;aspect-ratio:1054/1492;margin-top:-18%}
+  .cover{display:block;position:relative;min-height:0;overflow:hidden}
+  .cover .txt{position:relative;z-index:1;padding:34px 20px 0;min-height:min(150vw,720px);justify-content:flex-start;text-shadow:0 0 10px rgba(255,255,255,.95),0 0 3px rgba(255,255,255,.9)}
+  .cover .ph{position:absolute;inset:0;z-index:0}
+  .cover .ph img{height:100%;object-fit:cover;object-position:50% 55%;opacity:.34}
   .story{grid-template-columns:1fr;gap:0;padding:0 0 56px}
   .story.rev .ph{order:0}
   .story .ph img{border-radius:0}
@@ -170,6 +171,7 @@ br.sp{display:none}
       <h2><w-b>社員を</w-b><w-b>大事にしてきた</w-b><br><w-b>あなただけの</w-b><w-b>想いを</w-b><br class="sp"><w-b>「仕組み」へ。</w-b></h2>
       <p class="body"><w-b>社員と、</w-b><w-b>その家族の</w-b><w-b>これから。</w-b><br><w-b>会社として、</w-b><br class="sp"><w-b>どんな支えを</w-b><w-b>届けたいだろう。</w-b><br><w-b>あなたの言葉から、</w-b><br class="sp"><w-b>人生支援経営への</w-b><w-b>一歩を探す旅です。</w-b></p>
       <div class="guide">
+        <img class="mio" src="assets/mio.jpg" width="1000" height="800" alt="手を差し伸べて旅に誘うAIみお先生" loading="lazy">
         <h3><w-b>旅の案内役は、</w-b><w-b>AIみお先生。</w-b></h3>
         <p><w-b>あなた自身から、</w-b><w-b>「答え」を</w-b><w-b>導き出す。</w-b><br><w-b>想いを受け止め、</w-b><br class="sp"><w-b>一つずつ</w-b><w-b>問いかけながら</w-b><w-b>伴走します。</w-b></p>
         <p><w-b>動画と対話でめぐる、</w-b><br class="sp"><w-b>社長のための</w-b><w-b>オンライン体験。</w-b><br><w-b>ご自身のペースで、</w-b><w-b>旅を進められます。</w-b></p>
