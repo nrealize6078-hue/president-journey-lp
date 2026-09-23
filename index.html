@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>PRESIDENT JOURNEY｜旅への招待状</title>
+<meta name="description" content="あなたの原点から、まだ見ぬ会社の未来へ。社員と、会社のこれからを想う旅。LINEから始まる、社長のためのオンライン体験。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+[hidden]{display:none!important}
+:root{
+  --navy:#163747;--navy-d:#12303e;--sub:#536469;--gold:#aa8653;--gold-l:#dfc28d;
+  --cream:#f5f1ea;--paper:#fffdf8;--line:#e2d8c6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--navy);font-family:"Noto Sans JP",sans-serif;font-weight:400;line-height:1.9;line-break:strict;
+  padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+/* 文節：どの幅でも文節の境目でしか折り返さない */
+w-b{display:inline-block}
+br.sp{display:none}
+@media (max-width:600px){br.sp{display:inline}}
+.en{font-family:"Cinzel",serif;font-weight:600;letter-spacing:.28em;font-size:12px;color:var(--gold)}
+
+/* 表紙 */
+.cover{display:grid;grid-template-columns:1fr minmax(360px,44%);min-height:min(100vh,860px);background:#eef2f4}
+.cover .txt{padding:56px 6vw 40px;display:flex;flex-direction:column;justify-content:center}
+.cover .pre{font-size:14px;letter-spacing:.04em}
+.cover h1{font-family:"Cinzel",serif;font-weight:600;font-size:min(52px,9vw);line-height:1.15;letter-spacing:.08em;margin-top:22px}
+.cover .kana{font-size:16px;letter-spacing:.3em;margin-top:10px}
+.cover .catch{font-weight:500;font-size:min(38px,7.4vw);line-height:1.55;margin-top:40px}
+.cover .lead{font-size:16px;margin-top:18px}
+.cover .ph{position:relative;overflow:hidden}
+.cover .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 70%}
+.band{background:var(--navy);color:var(--gold-l);display:flex;justify-content:space-between;gap:12px;padding:14px 6vw;font-size:14px}
+.band b{color:var(--paper);font-weight:500}
+.band span{font-family:"Cinzel",serif;letter-spacing:.12em}
+
+/* 物語ページ */
+.story{display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:1180px;margin:0 auto;padding:72px 32px;gap:56px}
+.story.rev .ph{order:2}
+.story .ph img{width:100%;border-radius:4px}
+.story h2{font-weight:500;font-size:min(30px,2.6vw);line-height:1.6;margin-top:12px}
+.story .body{margin-top:22px;font-size:16px;color:var(--sub);line-height:2}
+.story .ask{margin-top:28px;font-size:19px;font-weight:500;line-height:2}
+.story .guide{margin-top:30px;padding-top:24px;border-top:1px solid var(--line)}
+.story .guide h3{font-size:18px;font-weight:700}
+.story .guide p{margin-top:8px;font-size:15px;color:var(--sub);line-height:2}
+.story .guide p+p{margin-top:14px}
+.story+.story{padding-top:0}
+
+/* チケット */
+.depart{background:var(--navy);color:var(--paper);padding:80px 24px 56px}
+.depart .in{max-width:760px;margin:0 auto}
+.depart .en{color:var(--gold-l)}
+.depart .to{color:var(--gold-l);font-size:16px;margin-top:26px}
+.depart h2{font-weight:500;line-height:1.45;margin-top:12px;font-size:min(40px,7.6vw)}
+.depart h2 .big{display:block;font-weight:700;font-size:1.45em}
+.depart .next{color:var(--gold-l);font-size:16px;margin-top:16px}
+
+.ticket{margin-top:40px;background:var(--paper);color:var(--navy);border-radius:6px;padding:30px 34px;display:grid;grid-template-columns:1fr 200px;gap:0 32px}
+.ticket .head{grid-column:1/-1;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.ticket .head p:first-child{font-family:"Cinzel",serif;font-weight:600;font-size:22px;letter-spacing:.06em}
+.route{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:18px 0 22px;border-bottom:1px dashed #c9bda6}
+.route dt{font-size:13px;color:var(--sub)}
+.route dd{font-size:20px;font-weight:500}
+.go{padding-top:24px}
+.go h3{font-size:22px;font-weight:500}
+.go p{font-size:15px;color:var(--sub);margin-top:8px;line-height:1.9}
+.go .pace{color:var(--gold);margin-top:14px}
+.btn{display:flex;align-items:center;justify-content:center;min-height:58px;margin-top:20px;padding:10px 16px;border-radius:6px;background:var(--navy);color:var(--paper);font-size:18px;font-weight:700;text-decoration:none;letter-spacing:.04em;text-align:center}
+.btn:hover{background:#1f4a5e}
+.qr{padding-top:24px;text-align:center}
+.qr img{width:170px;margin:0 auto;border:1px solid var(--line);border-radius:4px;padding:6px;background:#fff}
+.qr p{font-size:13px;color:var(--gold);margin-top:8px}
+.qr .note{color:var(--sub);font-size:12px;margin-top:2px}
+
+.foot{text-align:center;margin-top:44px;color:var(--gold-l)}
+.foot .online{font-size:15px}
+.foot .club{font-family:"Cinzel",serif;letter-spacing:.3em;color:var(--paper);font-size:18px;margin-top:22px}
+.foot .co{font-size:13px;margin-top:4px}
+
+/* 固定ボトムバー */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(18,48,62,.97);border-top:1px solid rgba(223,194,141,.5);
+  padding:12px 16px calc(12px + env(safe-area-inset-bottom))}
+.bar .in{max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.bar .msg{color:var(--paper);font-size:15px;line-height:1.5}
+.bar .msg small{display:block;font-family:"Cinzel",serif;color:var(--gold-l);letter-spacing:.14em;font-size:12px}
+.bar a{flex:0 0 auto;display:flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:6px;background:var(--gold-l);color:var(--navy-d);font-weight:700;font-size:17px;text-decoration:none;letter-spacing:.04em}
+.bar a:hover{background:#ead3a5}
+
+@media (max-width:900px){
+  .cover{display:block;min-height:0}
+  .cover .txt{padding:30px 20px 26px}
+  .cover .ph{max-height:120vw}
+  .cover .ph img{height:auto;aspect-ratio:1054/1492;margin-top:-18%}
+  .story{grid-template-columns:1fr;gap:0;padding:0 0 56px}
+  .story.rev .ph{order:0}
+  .story .ph img{border-radius:0}
+  .story h2{font-size:min(30px,6.4vw)}
+  .story .txt{padding:34px 20px 0}
+  .story+.story{padding-top:0}
+}
+@media (max-width:600px){
+  body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+  .cover .pre{font-size:min(13px,3.6vw)}
+  .cover h1{margin-top:16px}
+  .cover .kana{font-size:min(14px,3.9vw)}
+  .cover .catch{margin-top:28px;font-size:min(30px,7.2vw)}
+  .cover .lead{font-size:min(15px,4.2vw);margin-top:12px}
+  .band{padding:12px 20px;font-size:13px}
+  .story h2{font-size:min(26px,6.4vw)}
+  .story .body{font-size:min(16px,4.4vw)}
+  .story .ask{font-size:min(18px,4.6vw)}
+  .story .guide h3{font-size:min(18px,4.9vw)}
+  .story .guide p{font-size:min(15px,4.2vw)}
+  .depart{padding:56px 16px 44px}
+  .depart .to,.depart .next{font-size:min(15px,4.2vw)}
+  .ticket{grid-template-columns:1fr;padding:24px 18px;margin-top:30px}
+  .ticket .head p:first-child{font-size:min(20px,5.4vw)}
+  .route dd{font-size:min(18px,4.9vw)}
+  .go{text-align:center}
+  .go h3{font-size:min(21px,5.8vw)}
+  .go p{font-size:min(15px,4.2vw)}
+  .btn{font-size:min(17px,4.8vw)}
+  .qr{border-top:1px dashed #c9bda6;margin-top:24px}
+  .qr img{width:140px}
+  .foot .online{font-size:min(14px,3.9vw)}
+  .bar{padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
+  .bar .in{gap:10px}
+  .bar .msg{font-size:min(13px,3.6vw)}
+  .bar .msg small{font-size:min(11px,3vw);letter-spacing:.08em}
+  .bar a{min-height:50px;padding:0 16px;font-size:min(16px,4.4vw)}
+}
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="txt">
+    <p class="pre"><w-b>特別なあなたへ、</w-b><w-b>特別な旅のご案内。</w-b></p>
+    <h1>PRESIDENT<br>JOURNEY</h1>
+    <p class="kana">旅への招待状</p>
+    <p class="catch"><w-b>あなたの</w-b><w-b>原点から、</w-b><br><w-b>まだ見ぬ</w-b><w-b>会社の未来へ。</w-b></p>
+    <p class="lead"><w-b>社員と、</w-b><w-b>会社のこれからを</w-b><w-b>想う旅。</w-b></p>
+  </div>
+  <div class="ph"><img src="assets/cover.jpg" width="1054" height="1492" alt="朝日の差す駅のホームに入ってくる特急列車"></div>
+</header>
+<div class="band"><span>REALIZECLUB <i>presents</i></span><b>旅は、ここから。</b></div>
+
+<main>
+  <section class="story">
+    <div class="ph"><img src="assets/moment.jpg" width="971" height="742" alt="列車の窓から見る、朝焼けの山あいの景色"></div>
+    <div class="txt">
+      <p class="en">A MOMENT FOR YOU</p>
+      <h2><w-b>あの頃の</w-b><w-b>想いに、</w-b><br><w-b>もう一度、</w-b><w-b>会いにいく。</w-b></h2>
+      <p class="body"><w-b>会社と社員のために、</w-b><br class="sp"><w-b>走り続けてきた</w-b><w-b>あなたへ。</w-b><br><w-b>ここまでの</w-b><w-b>歩みを振り返り、</w-b><br><w-b>これからの</w-b><w-b>景色を、</w-b><br class="sp"><w-b>ゆっくり</w-b><w-b>思い描く</w-b><w-b>時間を。</w-b></p>
+      <p class="ask"><w-b>何を</w-b><w-b>大事にしてきたのか。</w-b><br><w-b>これから、</w-b><w-b>何を</w-b><w-b>大事にしていくのか。</w-b></p>
+    </div>
+  </section>
+
+  <section class="story rev">
+    <div class="ph"><img src="assets/scenery.jpg" width="971" height="742" alt="川の流れる谷の先に見える、朝の街並み"></div>
+    <div class="txt">
+      <p class="en">YOUR NEXT SCENERY</p>
+      <h2><w-b>社員を</w-b><w-b>大事にしてきた</w-b><br><w-b>あなただけの</w-b><w-b>想いを</w-b><br class="sp"><w-b>「仕組み」へ。</w-b></h2>
+      <p class="body"><w-b>社員と、</w-b><w-b>その家族の</w-b><w-b>これから。</w-b><br><w-b>会社として、</w-b><br class="sp"><w-b>どんな支えを</w-b><w-b>届けたいだろう。</w-b><br><w-b>あなたの言葉から、</w-b><br class="sp"><w-b>人生支援経営への</w-b><w-b>一歩を探す旅です。</w-b></p>
+      <div class="guide">
+        <h3><w-b>旅の案内役は、</w-b><w-b>AIみお先生。</w-b></h3>
+        <p><w-b>あなた自身から、</w-b><w-b>「答え」を</w-b><w-b>導き出す。</w-b><br><w-b>想いを受け止め、</w-b><br class="sp"><w-b>一つずつ</w-b><w-b>問いかけながら</w-b><w-b>伴走します。</w-b></p>
+        <p><w-b>動画と対話でめぐる、</w-b><br class="sp"><w-b>社長のための</w-b><w-b>オンライン体験。</w-b><br><w-b>ご自身のペースで、</w-b><w-b>旅を進められます。</w-b></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="depart" id="ticket">
+    <div class="in">
+      <p class="en">PRESIDENT JOURNEY</p>
+      <p class="to"><w-b>社員と、</w-b><w-b>会社の未来を</w-b><w-b>想うあなたへ。</w-b></p>
+      <h2><w-b>人生支援経営への</w-b><span class="big">特急券を！</span></h2>
+      <p class="next"><w-b>次の一歩は、</w-b><w-b>あなたの想いから。</w-b></p>
+
+      <div class="ticket">
+        <div class="head">
+          <p>PRESIDENT JOURNEY</p>
+          <p class="en">SPECIAL INVITATION</p>
+        </div>
+        <dl class="route">
+          <div><dt>出発地</dt><dd>あなたの原点</dd></div>
+          <div><dt>行き先</dt><dd>人生支援経営</dd></div>
+        </dl>
+        <div class="go">
+          <h3><w-b>この旅へ、</w-b><w-b>出発する。</w-b></h3>
+          <p><w-b>LINEを開いて、</w-b><br class="sp"><w-b>PRESIDENT JOURNEYへ。</w-b></p>
+          <a class="btn" href="https://lin.ee/vk9duU5" target="_blank" rel="noopener"><span><w-b>LINEで</w-b><w-b>旅をはじめる</w-b></span></a>
+          <p class="pace"><w-b>あなたのペースで、</w-b><w-b>ここから。</w-b></p>
+        </div>
+        <div class="qr">
+          <img src="assets/line-qr.png" width="540" height="540" alt="PRESIDENT JOURNEY LINE公式アカウントのQRコード">
+          <p>旅のチケット</p>
+          <p class="note"><w-b>スマホのカメラで</w-b><w-b>読み取れます</w-b></p>
+        </div>
+      </div>
+
+      <div class="foot">
+        <p class="online"><w-b>スマートフォンで始める、</w-b><br class="sp"><w-b>社長のための</w-b><w-b>オンライン体験。</w-b></p>
+        <p class="club">REALIZECLUB</p>
+        <p class="co">運営：株式会社REALIZE OS</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<nav class="bar" aria-label="PRESIDENT JOURNEYをはじめる">
+  <div class="in">
+    <p class="msg"><small>PRESIDENT JOURNEY</small><w-b>人生支援経営への</w-b><br class="sp"><w-b>特急券を！</w-b></p>
+    <a href="https://lin.ee/vk9duU5" target="_blank" rel="noopener">LINEで旅をはじめる</a>
+  </div>
+</nav>
+</body>
+</html>
