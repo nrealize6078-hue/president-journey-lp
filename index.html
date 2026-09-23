@@ -197,7 +197,31 @@ br.sp{display:none}
   .bar .msg small{font-size:min(11px,3vw);letter-spacing:.08em}
   .bar a{min-height:50px;padding:0 16px;font-size:min(16px,4.4vw)}
 }
+
+/* アニメーション：控えめに。JSが動いたときだけ隠す（動かなければ最初から全部見える） */
+@keyframes fvIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes fvZoom{from{transform:scale(1.06)}to{transform:scale(1)}}
+@keyframes barIn{from{transform:translateY(100%)}to{transform:none}}
+.js .cover .txt>*{opacity:0;animation:fvIn 1s cubic-bezier(.22,.61,.36,1) forwards}
+.js .cover .txt>:nth-child(1){animation-delay:.1s}
+.js .cover .txt>:nth-child(2){animation-delay:.25s}
+.js .cover .txt>:nth-child(3){animation-delay:.4s}
+.js .cover .txt>:nth-child(4){animation-delay:.6s}
+.js .cover .txt>:nth-child(5){animation-delay:.8s}
+.js .cover .txt>:nth-child(6){animation-delay:.95s}
+.js .cover .txt>:nth-child(7){animation-delay:1.1s}
+.js .cover .ph img{animation:fvZoom 9s ease-out both}
+.js .bar{animation:barIn .7s ease-out 1.2s both}
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity 1s ease,transform 1s cubic-bezier(.22,.61,.36,1);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.cta,.btn,.bar a{transition:background-color .25s,transform .25s}
+.cta:hover,.btn:hover,.bar a:hover{transform:translateY(-1px)}
+@media (prefers-reduced-motion:reduce){
+  .js .cover .txt>*,.js .cover .ph img,.js .bar{animation:none;opacity:1}
+  .js .rv{opacity:1;transform:none;transition:none}
+}
 </style>
+<script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
 
@@ -312,5 +336,28 @@ br.sp{display:none}
     <a href="https://lin.ee/vk9duU5" target="_blank" rel="noopener">LINEで無料ではじめる</a>
   </div>
 </nav>
+<script>
+(function(){
+  var sel='.story .ph,.story .txt,.about>*,.flow .en,.flow h2,.flow li,.depart .in>p,.depart .in>h2,.ticket,.foot';
+  var els=[].slice.call(document.querySelectorAll(sel));
+  els.forEach(function(e){e.classList.add('rv')});
+  // 7日間の4ステップは順番に
+  [].slice.call(document.querySelectorAll('.flow li')).forEach(function(li,i){li.style.setProperty('--d',(i*0.15)+'s')});
+  // 物語ページは写真→文章の順に
+  [].slice.call(document.querySelectorAll('.story .txt')).forEach(function(t){t.style.setProperty('--d','.15s')});
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(ents){
+    ents.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
+  },{rootMargin:'0px 0px -8% 0px',threshold:0.12});
+  els.forEach(function(e){io.observe(e)});
+  // 予備：スクロール位置でも判定（IntersectionObserverが動かない環境向け）
+  var tick=false;
+  function check(){tick=false;var h=window.innerHeight;els.forEach(function(e){if(!e.classList.contains('in')&&e.getBoundingClientRect().top<h*0.92)e.classList.add('in')})}
+  window.addEventListener('scroll',function(){if(!tick){tick=true;setTimeout(check,120)}},{passive:true});
+  setTimeout(check,300);
+  var iv=setInterval(function(){check();if(document.querySelectorAll('.rv:not(.in)').length===0)clearInterval(iv)},600);
+})();
+</script>
 </body>
 </html>
