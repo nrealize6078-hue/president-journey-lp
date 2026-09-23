@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>PRESIDENT JOURNEY｜旅への招待状</title>
-<meta name="description" content="あなたの原点から、まだ見ぬ会社の未来へ。社員と、会社のこれからを想う旅。LINEから始まる、社長のためのオンライン体験。">
+<meta name="description" content="あなたの原点から、まだ見ぬ会社の未来へ。AIミオ先生との対話を通して、自分の原点と、社員・会社の未来を見つめる7日間。経営者限定・参加無料。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,15 +27,15 @@ br.sp{display:none}
 .en{font-family:"Cinzel",serif;font-weight:600;letter-spacing:.28em;font-size:12px;color:var(--gold)}
 
 /* 表紙 */
-.cover{display:grid;grid-template-columns:1fr minmax(360px,44%);min-height:min(100vh,860px);background:#eef2f4}
-.cover .txt{padding:56px 6vw 40px;display:flex;flex-direction:column;justify-content:center}
+.cover{display:grid;grid-template-columns:1fr minmax(360px,44%);min-height:min(calc(100vh - 80px),860px);background:#eef2f4}
+.cover .txt{padding:36px 6vw 32px;display:flex;flex-direction:column;justify-content:center}
 .cover .pre{font-size:14px;letter-spacing:.04em}
 .cover h1{font-family:"Cinzel",serif;font-weight:600;font-size:min(52px,9vw);line-height:1.15;letter-spacing:.08em;margin-top:22px}
 .cover .kana{font-size:16px;letter-spacing:.3em;margin-top:10px}
-.cover .catch{font-weight:500;font-size:min(38px,7.4vw);line-height:1.55;margin-top:40px}
+.cover .catch{font-weight:500;font-size:min(36px,7.4vw);line-height:1.5;margin-top:26px}
 .cover .lead{font-size:16px;margin-top:18px}
 .cover .ph{position:relative;overflow:hidden}
-.cover .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 70%}
+.cover .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%}
 .band{background:var(--navy);color:var(--gold-l);display:flex;justify-content:space-between;gap:12px;padding:14px 6vw;font-size:14px}
 .band b{color:var(--paper);font-weight:500}
 .band span{font-family:"Cinzel",serif;letter-spacing:.12em}
@@ -77,7 +77,7 @@ br.sp{display:none}
 .t-go h3{font-size:5.4cqw;font-weight:500;line-height:1.5}
 .t-go p{font-size:max(12px,3.4cqw);color:var(--sub);line-height:1.6;margin-top:1cqw}
 .t-cta{top:50%;height:18%}
-.btn{display:flex;align-items:center;justify-content:center;width:84%;min-height:12.5cqw;border-radius:1.6cqw;background:var(--navy);color:var(--paper);
+.btn{display:flex;align-items:center;justify-content:center;width:84%;min-height:max(48px,12.5cqw);border-radius:1.6cqw;background:var(--navy);color:var(--paper);
   font-size:max(14px,4.4cqw);font-weight:700;text-decoration:none;letter-spacing:.04em;text-align:center;box-shadow:0 2px 0 rgba(22,55,71,.25)}
 .btn:hover{background:#1f4a5e}
 .t-cta .pace{font-size:max(12px,3.4cqw);color:var(--gold);margin-top:3cqw;line-height:1.5}
@@ -122,9 +122,34 @@ br.sp{display:none}
 .bar a{flex:0 0 auto;display:flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border-radius:6px;background:var(--gold-l);color:var(--navy-d);font-weight:700;font-size:17px;text-decoration:none;letter-spacing:.04em}
 .bar a:hover{background:#ead3a5}
 
+
+/* FV：説明・条件・CTA */
+.cover .fv-desc{font-size:17px;margin-top:14px;line-height:1.8}
+.fv-tags{display:flex;flex-wrap:wrap;margin-top:20px;font-weight:700;font-size:16px;letter-spacing:.06em}
+.fv-tags span{padding:2px 14px;border-left:1px solid currentColor;line-height:1.5}
+.fv-tags span:first-child{padding-left:0;border-left:0}
+.cta{display:flex;align-items:center;justify-content:center;width:100%;max-width:380px;min-height:60px;margin-top:22px;padding:10px 18px;border-radius:6px;
+  background:var(--navy);color:var(--paper);font-size:18px;font-weight:700;text-decoration:none;letter-spacing:.04em;text-align:center;box-shadow:0 3px 0 rgba(22,55,71,.22);text-shadow:none}
+.cta:hover{background:#1f4a5e}
+
+/* PRESIDENT JOURNEYとは？ */
+.about{max-width:760px;margin:0 auto;padding:8px 32px 80px;text-align:center}
+.about h2,.flow h2{font-weight:500;font-size:min(32px,6.6vw);line-height:1.6;margin-top:12px}
+.about .lead{font-size:18px;line-height:2.1;margin-top:26px}
+.about .fv-tags{justify-content:center;margin-top:30px}
+.about .cta{margin:22px auto 0}
+
+/* 7日間の流れ */
+.flow{background:var(--paper);padding:72px 32px;text-align:center}
+.flow ol{list-style:none;max-width:1000px;margin:40px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.flow li{background:var(--cream);border:1px solid var(--line);border-radius:6px;padding:26px 18px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.flow li b{font-family:"Cinzel",serif;font-weight:600;color:var(--gold);font-size:22px;letter-spacing:.1em}
+.flow li p{font-size:17px;font-weight:500;line-height:1.7}
+.story.mio-sec{padding-top:72px}
+
 @media (max-width:900px){
   .cover{display:block;position:relative;min-height:0;overflow:hidden}
-  .cover .txt{position:relative;z-index:1;padding:34px 20px 0;min-height:min(150vw,720px);justify-content:flex-start;text-shadow:0 0 10px rgba(255,255,255,.95),0 0 3px rgba(255,255,255,.9)}
+  .cover .txt{position:relative;z-index:1;padding:34px 20px 0;min-height:min(150vw,720px);padding-bottom:30px;justify-content:flex-start;text-shadow:0 0 10px rgba(255,255,255,.95),0 0 3px rgba(255,255,255,.9)}
   .cover .ph{position:absolute;inset:0;z-index:0}
   .cover .ph img{height:100%;object-fit:cover;object-position:50% 55%;opacity:.34}
   .story{grid-template-columns:1fr;gap:0;padding:0 0 56px}
@@ -134,7 +159,22 @@ br.sp{display:none}
   .story .txt{padding:34px 20px 0}
   .story+.story{padding-top:0}
 }
+@media (max-width:380px){.bar .msg small{display:none}}
 @media (max-width:600px){
+  .cover h1{font-size:min(44px,10.4vw)}
+  .cover .fv-desc{font-size:min(16px,4.4vw);margin-top:12px}
+  .fv-tags{font-size:min(15px,4.2vw);margin-top:16px}
+  .fv-tags span{padding:2px 10px}
+  .cta{max-width:none;min-height:58px;font-size:min(18px,5vw);margin-top:18px}
+  .about{padding:0 20px 60px}
+  .about h2,.flow h2{font-size:min(26px,6.6vw)}
+  .about .lead{font-size:min(17px,4.6vw);margin-top:20px}
+  .flow{padding:56px 20px}
+  .flow ol{grid-template-columns:1fr;gap:12px;margin-top:28px}
+  .flow li{flex-direction:row;text-align:left;padding:16px 18px;gap:16px}
+  .flow li b{font-size:20px;flex:0 0 auto}
+  .flow li p{font-size:min(17px,4.6vw)}
+  .story.mio-sec{padding-top:56px}
   body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
   .cover .pre{font-size:min(13px,3.6vw)}
   .cover h1{margin-top:16px}
@@ -142,7 +182,7 @@ br.sp{display:none}
   .cover .catch{margin-top:28px;font-size:min(30px,7.2vw)}
   .cover .lead{font-size:min(15px,4.2vw);margin-top:12px}
   .band{padding:12px 20px;font-size:13px}
-  .story h2{font-size:min(26px,6.4vw)}
+  .story h2{font-size:min(26px,6vw)}
   .story .body{font-size:min(16px,4.4vw)}
   .story .ask{font-size:min(18px,4.6vw)}
   .story .guide h3{font-size:min(18px,4.9vw)}
@@ -167,7 +207,9 @@ br.sp{display:none}
     <h1>PRESIDENT<br>JOURNEY</h1>
     <p class="kana">旅への招待状</p>
     <p class="catch"><w-b>あなたの</w-b><w-b>原点から、</w-b><br><w-b>まだ見ぬ</w-b><w-b>会社の未来へ。</w-b></p>
-    <p class="lead"><w-b>社員と、</w-b><w-b>会社のこれからを</w-b><w-b>想う旅。</w-b></p>
+    <p class="fv-desc"><w-b>AIミオ先生との</w-b><w-b>対話を通して、</w-b><br><w-b>自分の原点と、</w-b><br class="sp"><w-b>社員・会社の未来を</w-b><w-b>見つめる7日間。</w-b></p>
+    <p class="fv-tags"><span>経営者限定</span><span>参加無料</span><span>7日間</span></p>
+    <a class="cta fv-cta" href="https://lin.ee/vk9duU5" target="_blank" rel="noopener"><span><w-b>LINEで</w-b><w-b>無料ではじめる</w-b></span></a>
   </div>
   <div class="ph"><img src="assets/cover.jpg" width="1054" height="1492" alt="朝日の差す駅のホームに入ってくる特急列車"></div>
 </header>
@@ -184,18 +226,43 @@ br.sp{display:none}
     </div>
   </section>
 
+  <section class="about">
+    <p class="en">ABOUT THE JOURNEY</p>
+    <h2><w-b>PRESIDENT JOURNEY</w-b><br class="sp"><w-b>とは？</w-b></h2>
+    <p class="lead"><w-b>7日間、</w-b><w-b>毎日少しずつ。</w-b><br><w-b>ミオ先生から届く</w-b><br class="sp"><w-b>問いに答えながら、</w-b><br><w-b>自分の原点や、</w-b><br class="sp"><w-b>社員・会社の</w-b><w-b>これからを</w-b><br class="sp"><w-b>振り返っていきます。</w-b></p>
+    <p class="lead"><w-b>答えを</w-b><w-b>教えてもらうのではなく、</w-b><br><w-b>対話を通して、</w-b><br class="sp"><w-b>自分の中にある</w-b><w-b>想いに</w-b><w-b>気づいていく。</w-b><br><w-b>それが、</w-b><w-b>PRESIDENT JOURNEYです。</w-b></p>
+    <p class="fv-tags"><span>経営者限定</span><span>参加無料</span><span>7日間</span></p>
+    <a class="cta" href="https://lin.ee/vk9duU5" target="_blank" rel="noopener"><span><w-b>LINEで</w-b><w-b>無料ではじめる</w-b></span></a>
+  </section>
+
+  <section class="flow">
+    <p class="en">7 DAYS WITH MIO</p>
+    <h2><w-b>ミオ先生との</w-b><br class="sp"><w-b>対話で振り返る、</w-b><br><w-b>7日間の旅。</w-b></h2>
+    <ol>
+      <li><b>01</b><p><w-b>ミオ先生から</w-b><w-b>問いが届く</w-b></p></li>
+      <li><b>02</b><p><w-b>自分の言葉で</w-b><w-b>答える</w-b></p></li>
+      <li><b>03</b><p><w-b>対話を</w-b><w-b>重ねる</w-b></p></li>
+      <li><b>04</b><p><w-b>少しずつ、</w-b><w-b>自分と会社の未来が</w-b><w-b>見えてくる</w-b></p></li>
+    </ol>
+  </section>
+
   <section class="story rev">
     <div class="ph"><img src="assets/scenery.jpg" width="971" height="742" alt="川の流れる谷の先に見える、朝の街並み"></div>
     <div class="txt">
       <p class="en">YOUR NEXT SCENERY</p>
-      <h2><w-b>社員を</w-b><w-b>大事にしてきた</w-b><br><w-b>あなただけの</w-b><w-b>想いを</w-b><br class="sp"><w-b>「仕組み」へ。</w-b></h2>
-      <p class="body"><w-b>社員と、</w-b><w-b>その家族の</w-b><w-b>これから。</w-b><br><w-b>会社として、</w-b><br class="sp"><w-b>どんな支えを</w-b><w-b>届けたいだろう。</w-b><br><w-b>あなたの言葉から、</w-b><br class="sp"><w-b>人生支援経営への</w-b><w-b>一歩を探す旅です。</w-b></p>
-      <div class="guide">
-        <img class="mio" src="assets/mio.jpg" width="1000" height="800" alt="手を差し伸べて旅に誘うAIみお先生" loading="lazy">
-        <h3><w-b>旅の案内役は、</w-b><w-b>AIみお先生。</w-b></h3>
-        <p><w-b>あなた自身から、</w-b><w-b>「答え」を</w-b><w-b>導き出す。</w-b><br><w-b>想いを受け止め、</w-b><br class="sp"><w-b>一つずつ</w-b><w-b>問いかけながら</w-b><w-b>伴走します。</w-b></p>
-        <p><w-b>動画と対話でめぐる、</w-b><br class="sp"><w-b>社長のための</w-b><w-b>オンライン体験。</w-b><br><w-b>ご自身のペースで、</w-b><w-b>旅を進められます。</w-b></p>
-      </div>
+      <h2><w-b>社員を</w-b><w-b>大事にしてきた</w-b><w-b>想いを、</w-b><br><w-b>未来へ。</w-b></h2>
+      <p class="body"><w-b>社員一人ひとりと、</w-b><w-b>その家族の</w-b><w-b>これから。</w-b><br><w-b>会社として、</w-b><br class="sp"><w-b>どんな支えを</w-b><w-b>届けたいだろう。</w-b></p>
+      <p class="ask"><w-b>旅の中で</w-b><w-b>見えてきた想いを、</w-b><br><w-b>社員の人生を支える</w-b><w-b>「仕組み」へ。</w-b></p>
+    </div>
+  </section>
+
+  <section class="story mio-sec">
+    <div class="ph"><img src="assets/mio.jpg" width="1000" height="800" alt="手を差し伸べて旅に誘うAIミオ先生" loading="lazy"></div>
+    <div class="txt">
+      <p class="en">YOUR GUIDE</p>
+      <h2><w-b>旅の案内役は、</w-b><br><w-b>AIミオ先生。</w-b></h2>
+      <p class="body"><w-b>ミオ先生が、</w-b><br class="sp"><w-b>答えを決めることは</w-b><w-b>ありません。</w-b><br><w-b>一つずつ</w-b><w-b>問いかけながら、</w-b><br><w-b>社長自身の中にある</w-b><w-b>想いを、</w-b><br><w-b>一緒に</w-b><w-b>整理していきます。</w-b></p>
+      <p class="body"><w-b>LINEで届く問いに</w-b><w-b>答えるだけ。</w-b><br><w-b>ご自身のペースで、</w-b><w-b>旅を進められます。</w-b></p>
     </div>
   </section>
 
@@ -203,7 +270,7 @@ br.sp{display:none}
     <div class="in">
       <p class="en">PRESIDENT JOURNEY</p>
       <p class="to"><w-b>社員と、</w-b><w-b>会社の未来を</w-b><w-b>想うあなたへ。</w-b></p>
-      <h2><w-b>人生支援経営への</w-b><span class="big">特急券を！</span></h2>
+      <h2><w-b>あなたの想いを、</w-b><br class="sp"><w-b>会社の未来へ。</w-b></h2>
       <p class="next"><w-b>次の一歩は、</w-b><w-b>あなたの想いから。</w-b></p>
 
       <div class="ticket">
@@ -213,14 +280,14 @@ br.sp{display:none}
         </div>
         <dl class="z t-route">
           <div><dt>出発地</dt><dd>あなたの原点</dd></div>
-          <div><dt>行き先</dt><dd>人生支援経営</dd></div>
+          <div><dt>行き先</dt><dd>会社の未来</dd></div>
         </dl>
         <div class="z t-go">
           <h3><w-b>この旅へ、</w-b><w-b>出発する。</w-b></h3>
-          <p><w-b>LINEを開いて、</w-b><w-b>PRESIDENT JOURNEYへ。</w-b></p>
+          <p><w-b>経営者限定｜</w-b><w-b>参加無料｜</w-b><w-b>7日間</w-b></p>
         </div>
         <div class="z t-cta">
-          <a class="btn" href="https://lin.ee/vk9duU5" target="_blank" rel="noopener"><span><w-b>LINEで</w-b><w-b>旅をはじめる</w-b></span></a>
+          <a class="btn" href="https://lin.ee/vk9duU5" target="_blank" rel="noopener"><span><w-b>LINEで</w-b><w-b>無料ではじめる</w-b></span></a>
           <p class="pace"><w-b>あなたのペースで、</w-b><w-b>ここから。</w-b></p>
         </div>
         <div class="z t-qr">
@@ -231,7 +298,7 @@ br.sp{display:none}
       </div>
 
       <div class="foot">
-        <p class="online"><w-b>スマートフォンで始める、</w-b><br class="sp"><w-b>社長のための</w-b><w-b>オンライン体験。</w-b></p>
+        <p class="online"><w-b>スマートフォンで始める、</w-b><br class="sp"><w-b>社長のための</w-b><w-b>7日間の旅。</w-b></p>
         <p class="club">REALIZECLUB</p>
         <p class="co">運営：株式会社REALIZE OS</p>
       </div>
@@ -241,8 +308,8 @@ br.sp{display:none}
 
 <nav class="bar" aria-label="PRESIDENT JOURNEYをはじめる">
   <div class="in">
-    <p class="msg"><small>PRESIDENT JOURNEY</small><w-b>人生支援経営への</w-b><br class="sp"><w-b>特急券を！</w-b></p>
-    <a href="https://lin.ee/vk9duU5" target="_blank" rel="noopener">LINEで旅をはじめる</a>
+    <p class="msg"><small>PRESIDENT JOURNEY</small><w-b>経営者限定｜</w-b><w-b>参加無料｜</w-b><w-b>7日間</w-b></p>
+    <a href="https://lin.ee/vk9duU5" target="_blank" rel="noopener">LINEで無料ではじめる</a>
   </div>
 </nav>
 </body>
