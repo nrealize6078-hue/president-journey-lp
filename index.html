@@ -378,5 +378,55 @@ br.sp{display:none}
   var iv=setInterval(function(){check();if(document.querySelectorAll('.rv:not(.in)').length===0)clearInterval(iv)},600);
 })();
 </script>
+<script>
+(function(){
+  const endpoint = 'https://vdgngagyrgzujjhogijj.supabase.co/functions/v1/pj-track';
+  const params = new URLSearchParams(location.search);
+  const leadId = (params.get('lead_id') || '').trim();
+
+  if (!leadId || !/^[A-Za-z0-9._-]{3,64}$/.test(leadId)) return;
+
+  const makeId = () => crypto.randomUUID();
+
+  let sessionId = sessionStorage.getItem('pj_session_id');
+  if (!sessionId) {
+    sessionId = makeId();
+    sessionStorage.setItem('pj_session_id', sessionId);
+  }
+
+  function track(eventType) {
+    fetch(endpoint, {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'omit',
+      keepalive: true,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        client_event_id: makeId(),
+        session_id: sessionId,
+        lead_id: leadId,
+        event_type: eventType,
+        utm_source: params.get('utm_source') || null,
+        utm_campaign: params.get('utm_campaign') || null,
+        utm_content: params.get('utm_content') || null,
+        page_path: location.pathname + location.search,
+        referrer: document.referrer || null
+      })
+    }).catch(() => {});
+  }
+
+  track('lp_view');
+
+  document
+    .querySelectorAll('a[href^="https://lin.ee/vk9duU5"]')
+    .forEach(a => {
+      a.addEventListener('click', () => {
+        track('line_cta_click');
+      }, { passive: true });
+    });
+})();
+</script>
 </body>
 </html>
